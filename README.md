@@ -1,4 +1,4 @@
 futuregeeks.github.io
 =====================
 
-the future home of futuregeeks.tv
+The future home of futuregeeks.tv.
