@@ -11,14 +11,11 @@ $col-pad: 10%;
     @media (min-width: $maxpagewidth + 25) { @content; }
   }
   @else if $point == medium {
-    @media (min-width: 750px) { @content; }
+    @media (min-width: em(750)) { @content; }
   }
   @else if $point == small {
-    @media (min-width: 500px) { @content; }
+    @media (min-width: em(500)) { @content; }
   }
-  // @else if $point == 525 {
-  //   @media (min-width: 500px) { @content; }
-  // }
 }
 
 $light-gray: #e5e5e5;
@@ -204,6 +201,7 @@ header {
     max-width: $maxpagewidth;
     margin: auto;
     padding: 2em 0 2.5em 0;
+    @include clearfix;
 
     @include breakpoint(medium) {
       padding: 3.25em 0 3.75em 0;
@@ -378,7 +376,8 @@ footer {
   background-color: $medium-navy;
   color: $light-navy;
   padding: 1em;
-  font-size: .85em;  
+  font-size: .85em;
+  @include clearfix;
 
   span {
     display: block;
