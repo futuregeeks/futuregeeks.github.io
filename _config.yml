@@ -8,13 +8,13 @@ timezone: America/New_York
 # use your ip address when working locally 
 # BrowserSync uses this for the local server location
 # url: your ip address goes here
-url: http://futuregeeks.github.io/
+url: http://futuregeeks.github.io
 
 # Links to include in top navigation 
 # For external links add external: true
 links:
   - title: Home
-    url: 
+    url: /
   - title: About
     url: /about/
   - title: Contact
@@ -23,7 +23,7 @@ links:
     url: /subscribe/
 
 # http://jekyllrb.com/docs/permalinks/
-permalink: :title/
+permalink: /:title/
 paginate: 10
 
 # exclude directories and/or files from the conversion
