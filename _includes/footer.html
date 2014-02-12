@@ -1,0 +1,42 @@
+<footer>
+    <div class="wrapper">
+      <div class="grid">
+        <div class="col-1-3">
+          <h3>Navigation</h3>
+          <ul>
+            {% for link in site.links %}
+            <li>
+                {% if link.external %}
+                <a href="{{ link.url }}">{{ link.title }}</a>
+                {% else %}
+                <a href="{{ site.url }}{{ link.url }}">{{ link.title }}</a>
+                {% endif %} 
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+        <div class="col-1-3">
+          <h3>Join the Community</h3>
+          <ul>
+            <li><a href="https://twitter.com/futuregeeks">Twitter</a></li>
+            <li><a href="https://plus.google.com/b/109320936491649661300/109320936491649661300/posts">Google+</a></li>
+            <li><a href="http://futuregeeks.reddit.com">Subreddit</a></li>
+            <li><a href="#">Email List</a></li>
+          </ul>
+        </div>
+        <div class="col-1-3">
+          <h3>Recent Episodes</h3>
+          <ul>
+            {% for post in site.posts limit:4 %}
+            <li>
+              <a href="{{ post.url }}">{{ post.title }}</a>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <div class="credits">
+    <span><p>Built with <a href="http://jekyllrb.com/">Jekyll</a> and proudly hosted on <a href="https://github.com/futuregeeks/futuregeeks.github.io">Github</a>.</p></span>
+  </div>
