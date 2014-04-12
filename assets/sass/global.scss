@@ -11,7 +11,7 @@ $col-pad: 10%;
     @media (min-width: $maxpagewidth + 25) { @content; }
   }
   @else if $point == medium {
-    @media (min-width: em(750)) { @content; }
+    @media (min-width: em(855)) { @content; }
   }
   @else if $point == small {
     @media (min-width: em(500)) { @content; }
@@ -19,6 +19,7 @@ $col-pad: 10%;
 }
 
 $light-gray: #e5e5e5;
+$dark-gray: #252525;
 $light-navy: #65737e;
 $medium-navy: #414959;
 $dark-navy: #2b303b;
@@ -28,7 +29,6 @@ $navy-highlight: lighten( $dark-navy, 50% );
 ::-moz-selection { background: $navy-highlight; color: #000; text-shadow: none; }
 ::selection { background: $navy-highlight; color: #000; text-shadow: none; }
 
-
 /* ==========================================================================
    Imports
    ========================================================================== */
@@ -36,7 +36,6 @@ $navy-highlight: lighten( $dark-navy, 50% );
 @import "normalize.scss";
 @import "bourbon/bourbon";
 @import "syntax.css";
-
 
 /* =============================================================================
    Base Grid
@@ -132,7 +131,6 @@ $navy-highlight: lighten( $dark-navy, 50% );
   }
 }
 
-
 /* ==========================================================================
    Fonts
    ========================================================================== */
@@ -144,14 +142,57 @@ $navy-highlight: lighten( $dark-navy, 50% );
   src: local('Electrolize'), local('Electrolize-Regular'), url(http://themes.googleusercontent.com/static/fonts/electrolize/v3/DDy9sgU2U7S4xAwH5thnJ7rIa-7acMAeDBVuclsi6Gc.woff) format('woff');
 }
 
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Roboto Light'), local('Roboto-Light'), url(http://themes.googleusercontent.com/static/fonts/roboto/v10/Hgo13k-tfSpn0qi1SFdUfbO3LdcAZYWl9Si6vvxL-qU.woff) format('woff');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto Regular'), local('Roboto-Regular'), url(http://themes.googleusercontent.com/static/fonts/roboto/v10/CrYjSnGjrRCn0pd9VQsnFOvvDin1pK8aKteLpeZ5c0A.woff) format('woff');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Roboto Bold'), local('Roboto-Bold'), url(http://themes.googleusercontent.com/static/fonts/roboto/v10/d-6IYplOFocCacKzxwXSOLO3LdcAZYWl9Si6vvxL-qU.woff) format('woff');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 300;
+  src: local('Roboto Light Italic'), local('Roboto-LightItalic'), url(http://themes.googleusercontent.com/static/fonts/roboto/v10/7m8l7TlFO-S3VkhHuR0at7rIa-7acMAeDBVuclsi6Gc.woff) format('woff');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Roboto Italic'), local('Roboto-Italic'), url(http://themes.googleusercontent.com/static/fonts/roboto/v10/1pO9eUAp8pSF8VnRTP3xnnYhjbSpvc47ee6xR_80Hnw.woff) format('woff');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 700;
+  src: local('Roboto Bold Italic'), local('Roboto-BoldItalic'), url(http://themes.googleusercontent.com/static/fonts/roboto/v10/t6Nd4cfPRhZP44Q5QAjcC7rIa-7acMAeDBVuclsi6Gc.woff) format('woff');
+}
+
 /* ==========================================================================
    Baseline Typography Styles
    ========================================================================== */
 
 html, body, button, input, select, textarea {  
-  font-family: helvetica, arial, sans-serif; 
+  font-family: Roboto, helvetica, arial, sans-serif; 
   font-size: 16px; 
   line-height: 1.65;
+  color: $dark-gray;
+
+  @include breakpoint(medium) {
+    font-size: 17px; 
+  }
+
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -161,7 +202,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1, h2 {
-  font-weight: 100;
+  margin: 0;
+  font-weight: 300;
 }
 
 p {
@@ -184,7 +226,6 @@ a {
 a:hover {
   color: $navy-highlight;
 }
-
 
 /* ==========================================================================
    Header Styles
@@ -227,7 +268,7 @@ header {
   }
 
   h1 a {
-    color: #000;
+    color: $light-navy;
   }
 
   nav {
@@ -238,14 +279,13 @@ header {
     text-align: center;
 
     @include breakpoint(small) {
-      font-size: 1.15em;
+      font-size: 1.25em;
     }
     
     @include breakpoint(medium) {
       margin: .3em 0 0 0;
       float: right;
       padding: 0 $col-pad 0 0;
-      font-size: 1.25em;
     }
     
   }
@@ -296,7 +336,6 @@ header {
   }
 
 }
-
 
 /* ==========================================================================
    Main Section Styles
@@ -379,6 +418,11 @@ footer {
   font-size: .85em;
   @include clearfix;
 
+  a {
+    padding-bottom: 2px;
+    border-bottom: 1px solid;
+  }
+
   span {
     display: block;
     max-width: $maxpagewidth;
@@ -398,13 +442,23 @@ footer {
 
 }
 
-
 /* ==========================================================================
    Blog Styles
    ========================================================================== */
 
 .listings {
-  margin-bottom: 3em;
+  margin-top: 7%;
+  padding-bottom: 8.25%;
+  border-bottom: 1px solid $light-gray;
+
+  &:first-of-type {
+    margin-top: 0;
+  }
+
+  &:last-of-type {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
 
   h2 {
     margin: 0;
@@ -413,8 +467,10 @@ footer {
 }
 
 .meta {
-  margin: 0;
+  margin: -.25em 0 1.5em 0;
   font-size: .85em;
+  text-transform: uppercase;
+  color: $light-navy;
 }
 
 // http://embedresponsively.com/
@@ -422,6 +478,7 @@ footer {
   position: relative;
   padding-bottom: 56.25%;
   padding-top: 30px;
+  margin: 2em 0 0 0;
   height: 0;
   overflow: hidden;
   max-width: 100%;
@@ -436,7 +493,6 @@ footer {
   width: 100%;
   height: 100%;
 }
-
 
 /* ==========================================================================
    Syntax Styles
@@ -503,8 +559,6 @@ footer {
 .highlight .vi { color: #008080 } /* Name.Variable.Instance */
 .highlight .il { color: #009999 } /* Literal.Number.Integer.Long */
 
-
 /* ==========================================================================
    IE Styles
    ========================================================================== */
-
