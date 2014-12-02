@@ -1,8 +1,0 @@
-{
-  "devDependencies": {
-    "gulp": "~3.5.2",
-    "browser-sync": "~0.5.7",
-    "gulp-sass": "~0.7.0",
-    "gulp-notify": "~0.4.5"
-  }
-}

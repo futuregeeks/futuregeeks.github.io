@@ -1,29 +1,26 @@
-#futuregeeks.tv
+# futuregeeks.tv
 
 This is the future home of futuregeeks.tv.  
 We'll be designing and developing this publicly, so expect to see lots of changes and few bugs ;)
 
-##Getting Started
+#### Requirements
 
-####Install Node
-Simply visit [nodejs.org](http://nodejs.org) and click on the big green “Install” button.
+At least [Ruby](https://www.ruby-lang.org/en/installation/) 1.9.3 and [Bundler](http://bundler.io/).
 
-####Install Gulp Globally
+#### Project Setup
 
-~~~ sh
-$ npm install -g gulp
-~~~
+You first need to install the project's Ruby dependencies. From the root directory, run:
 
-####Install Dependencies
+```bash
+bundle install
+```
 
-Make sure you're in the root project folder.
+#### Running
 
-~~~ sh
-$ npm install
-~~~
+To run the project:
 
-####Run Gulp
+```bash
+bundle exec jekyll serve --watch
+```
 
-~~~ sh
-$ gulp
-~~~
+The site will now be available at `http://localhost:4000`. Jekyll will watch for changes in the project and reload them.
