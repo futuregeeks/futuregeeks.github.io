@@ -1,6 +1,10 @@
+---
+# Front matter comment to ensure Jekyll properly reads the file
+---
+
 /* =============================================================================
    Variables & Mixins
-   ========================================================================== */  
+   ========================================================================== */
 
 $maxpagewidth: 1100px;
 $small-col-pad: 5%;
@@ -32,18 +36,18 @@ $navy-highlight: lighten( $dark-navy, 50% );
 /* ==========================================================================
    Imports
    ========================================================================== */
- 
+
 @import "normalize.scss";
 @import "bourbon/bourbon";
 @import "syntax.css";
 
 /* =============================================================================
    Base Grid
-   ========================================================================== */  
+   ========================================================================== */
 
 .grid {
   margin: 0;
-  
+
   &:after {
     /* Or @extend clearfix */
     content: "";
@@ -59,7 +63,7 @@ $navy-highlight: lighten( $dark-navy, 50% );
   @include breakpoint(small) {
     padding-right: $col-pad;
   }
-  
+
   .grid &:last-of-type {
     padding-right: 0;
   }
@@ -120,14 +124,14 @@ $navy-highlight: lighten( $dark-navy, 50% );
   @include breakpoint(small) {
     padding: 0 0 0 $col-pad;
   }
-  
+
   [class*='col-']:last-of-type {
     padding-right: $small-col-pad;
 
     @include breakpoint(small) {
       padding-right: $col-pad;
     }
-    
+
   }
 }
 
@@ -183,14 +187,14 @@ $navy-highlight: lighten( $dark-navy, 50% );
    Baseline Typography Styles
    ========================================================================== */
 
-html, body, button, input, select, textarea {  
-  font-family: Roboto, helvetica, arial, sans-serif; 
-  font-size: 16px; 
+html, body, button, input, select, textarea {
+  font-family: Roboto, helvetica, arial, sans-serif;
+  font-size: 16px;
   line-height: 1.65;
   color: $dark-gray;
 
   @include breakpoint(medium) {
-    font-size: 17px; 
+    font-size: 17px;
   }
 
 }
@@ -247,7 +251,7 @@ header {
     @include breakpoint(medium) {
       padding: 3.25em 0 3.75em 0;
     }
-    
+
   }
 
   h1 {
@@ -264,7 +268,7 @@ header {
       margin: 0;
       text-align: left;
     }
-    
+
   }
 
   h1 a {
@@ -281,13 +285,13 @@ header {
     @include breakpoint(small) {
       font-size: 1.25em;
     }
-    
+
     @include breakpoint(medium) {
       margin: .3em 0 0 0;
       float: right;
       padding: 0 $col-pad 0 0;
     }
-    
+
   }
 
   nav a {
@@ -302,7 +306,7 @@ header {
     @include breakpoint(medium) {
       margin: 0 0 0 1em;
     }
-    
+
   }
 
   nav a:hover,
@@ -354,7 +358,7 @@ main {
     padding-top: 2.5em;
     padding-bottom: 2.75em;
   }
-  
+
 
   @include breakpoint(medium) {
     padding-top: 3em;
@@ -365,7 +369,7 @@ main {
     padding-top: 4.25em;
     padding-bottom: 4.5em;
   }
-  
+
 }
 
 /* ==========================================================================
@@ -392,9 +396,9 @@ footer {
       text-align: left;
       width: 33%;
     }
-    
+
   }
-  
+
   .wrapper {
     max-width: $maxpagewidth;
     margin: auto;
@@ -437,7 +441,7 @@ footer {
       text-align: right;
       padding: 0 $col-pad 0 $col-pad;
     }
-    
+
   }
 
 }
@@ -474,7 +478,7 @@ footer {
 }
 
 // http://embedresponsively.com/
-.embed { 
+.embed {
   position: relative;
   padding-bottom: 56.25%;
   padding-top: 30px;
@@ -486,7 +490,7 @@ footer {
   border: 1px solid $light-gray;
 }
 
-.embed iframe, .embed object, .embed embed { 
+.embed iframe, .embed object, .embed embed {
   position: absolute;
   top: 0;
   left: 0;
